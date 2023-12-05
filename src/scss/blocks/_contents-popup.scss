@@ -1,0 +1,46 @@
+@import 'keyframes.css';
+@import '../mixins';
+
+.cont-popup {
+  @include popup;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+.cont-popup__bubble {
+  @include bg-def-options('../images/bubbles/send-bubble.png', 147px, 147px);
+  position: relative;
+  margin: 20px 0 0;
+}
+
+.cont-popup__person {
+  position: absolute;
+  @include bg-def-options('../images/people/left6.svg', 59px, 94px);
+  left: 45px;
+  bottom: 17px;
+  animation: person-toggle-bottom .6s linear infinite;
+  z-index: -1;
+}
+
+.cont-popup__title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 15px 0 0;
+  @include all-popups-text;
+}
+
+.cont-popup__subtitle {
+  @include all-popups-text;
+  @include popup-subtitle;
+}
+
+.cont-popup__button {
+  @include popup-button;
+  background-image: url('../images/buttons/button-default.png');
+
+  &:hover {
+    @include popup-button-hover;
+    background-image: url('../images/buttons/button-hover.png');
+  }
+}

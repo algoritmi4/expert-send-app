@@ -1,0 +1,97 @@
+@import 'keyframes.css';
+@import '../mixins';
+
+.end-game {
+  @include bg-def-options('../images/BG-end.jpg', 375px, 667px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.end-game__panel {
+  @include popup;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+.end-game__hand-grade {
+  @include bg-def-options('../images/hands/winner.png', 97px, 88px);
+  margin: 21px 0 0;
+
+  &.loser {
+    @include bg-def-options('../images/hands/loser.png', 97px, 88px);
+  }
+
+  &.secondary {
+    @include bg-def-options('../images/hands/secondary.png', 97px, 88px);
+  }
+}
+
+.end-game__title {
+  @include all-popups-text;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 25px 0 0;
+}
+
+.end-game__subtitle {
+  @include popup-subtitle;
+  @include all-popups-text;
+  font-size: 11px;
+  margin: 16px 0 0;
+  height: 110px;
+}
+
+.end-game__restart-button {
+  @include bg-def-options('../images/buttons/restart-button.png', 279px, 89px);
+  border: none;
+  background-color: transparent;
+  margin: 31px 0 0;
+  cursor: pointer;
+}
+
+.end-game__share {
+  @include all-popups-text;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 16px 0 0;
+  cursor: pointer;
+}
+
+.end-game__nav-buttons {
+  list-style: none;
+  display: flex;
+  margin: 17px 0 0;
+}
+
+.end-game__nav-tg-image {
+  @include bg-def-options('../images/share/tg-default.svg', 68px, 66px);
+  cursor: pointer;
+
+  &:hover {
+    @include bg-def-options('../images/share/tg-hover.svg', 68px, 66px);
+  }
+}
+
+.end-game__nav-vk-image {
+  @include bg-def-options('../images/share/vk-default.svg', 68px, 66px);
+  margin-left: 20px;
+  cursor: pointer;
+
+  &:hover {
+    @include bg-def-options('../images/share/vk-hover.svg', 68px, 66px);
+  }
+}
+
+.end-game__nav-ok-image {
+  @include bg-def-options('../images/share/ok-default.svg', 68px, 66px);
+  margin-left: 20px;
+  cursor: pointer;
+
+  &:hover {
+    @include bg-def-options('../images/share/ok-hover.svg', 68px, 66px);
+  }
+}

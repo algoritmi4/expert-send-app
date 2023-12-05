@@ -1,0 +1,12 @@
+@import 'keyframes.css';
+
+.car {
+  background-image: url('../images/car.png');
+  background-repeat: no-repeat;
+  background-size: 180px 97px;
+  width: 180px;
+  height: 97px;
+  position: absolute;
+  bottom: 30px;
+  animation: car-drive 4s linear infinite;
+}

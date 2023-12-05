@@ -1,0 +1,73 @@
+@import 'keyframes.css';
+@import '../mixins';
+
+@keyframes bubble {
+  0% {
+    visibility: hidden;
+  }
+  33% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.start-popup {
+  @include popup;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+.start-popup__animation-box {
+  @include popup-animation-box;
+}
+
+.start-popup__err-bubble {
+  @include bg-def-options('../images/bubbles/err-bubble.png', 147px, 147px);
+  position: absolute;
+  left: 66px;
+  top: 22px;
+  visibility: hidden;
+  animation: bubble 2s linear infinite;
+}
+
+.start-popup__person {
+  background-image: url('../images/people/left6.svg');
+  background-size: 59px 94px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 147px;
+  height: 147px;
+  z-index: -1;
+  position: absolute;
+  left: 66px;
+  top: 22px;
+  visibility: visible;
+}
+
+.start-popup__hand {
+  @include bg-def-options('../images/hands/hand.png', 91px, 150px);
+  position: absolute;
+  bottom: 0;
+  left: 102px;
+  animation: hand-click-prevue 2s linear infinite;
+}
+
+.start-popup__subtitle {
+  @include all-popups-text;
+  @include popup-subtitle;
+  margin: 24px 0 0;
+}
+
+.start-popup__button {
+  @include popup-button;
+  background-image: url('../images/buttons/go-button-default.png');
+  margin: 17px 0 0;
+
+  &:hover {
+    @include popup-button-hover;
+    background-image: url('../images/buttons/go-button-hover.png');
+    margin: 14px 0 0;
+  }
+}

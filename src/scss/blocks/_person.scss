@@ -1,0 +1,105 @@
+@import 'keyframes.css';
+@import '../mixins';
+
+.person {
+  right: 15px;
+  bottom: 20px;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 260px;
+  animation: person-run-out-left .3s linear;
+  transition: bottom 2s linear, left .5s linear, right .5s linear;
+
+  &.right {
+    @include right-person();
+    bottom: 125px;
+    left: 10px;
+  }
+
+  &.upper-right {
+    @include right-person();
+    bottom: 400px;
+    left: 15px;
+  }
+
+  &.upper-left {
+    bottom: 300px;
+    right: 30px;
+  }
+
+  &.send-animation {
+    bottom: 120%;
+  }
+
+  &.right-exit-animation {
+    left: -100px;
+  }
+
+  &.left-exit-animation {
+    right: -100px;
+  }
+}
+
+.person__speech-bubble {
+  background-image: url('../images/speech-bubbles/left-bubble.png');
+  background-size: 220px 89px;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-transform: uppercase;
+  width: 220px;
+  height: 89px;
+  margin: 0 35px 0 0;
+  text-align: center;
+  padding: 20px 8px 0;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 400;
+
+  &.right-bubble {
+    background-image: url('../images/speech-bubbles/right-bubble.png');
+    margin: 0 0 0 25px;
+  }
+
+  &.big-left-bubble {
+    background-image: url('../images/speech-bubbles/big-left-bubble.png');
+    @include big-bubble();
+    padding: 25px 6px 0;
+  }
+
+  &.big-right-bubble {
+    background-image: url('../images/speech-bubbles/big-right-bubble.png');
+    margin: 0 0 0 25px;
+    @include big-bubble();
+    padding: 25px 6px 0;
+  }
+}
+
+.person__image {
+  width: 63px;
+  height: 93px;
+  margin: 10px 0 0;
+  cursor: pointer;
+
+  &.rotate-animation {
+    animation: rotate-person 2s linear;
+  }
+}
+
+.person__send-bubble {
+  @include bg-def-options('../images/bubbles/send-bubble.png', 147px, 147px);
+  position: absolute;
+  right: -43px;
+  bottom: -25px;
+
+  &.err-bubble {
+    background-image: url('../images/bubbles/err-bubble.png');
+  }
+
+  &.person__send-bubble_right {
+    right: unset;
+    left: -43px;
+  }
+}

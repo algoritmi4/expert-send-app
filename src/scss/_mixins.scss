@@ -1,0 +1,86 @@
+@mixin bg-def-options($image, $width, $height) {
+  background-image: url($image);
+  background-size: $width $height;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: $width;
+  height: $height;
+}
+
+@mixin big-bubble {
+  width: 165px;
+  height: 130px;
+  background-size: 165px 130px;
+}
+
+@mixin right-person {
+  align-items: flex-start;
+  right: unset;
+  animation: person-run-out-right .3s linear;
+}
+
+@mixin counter-timer {
+  background-repeat: no-repeat;
+  background-size: 147px 47px;
+  width: 147px;
+  height: 47px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 12px;
+}
+
+@mixin count-time {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 20px 0 0;
+}
+
+@mixin popup {
+  background-image: url('../images/panel.png');
+  background-size: 334px 582px;
+  background-repeat: no-repeat;
+  width: 334px;
+  height: 582px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin all-popups-text {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@mixin popup-subtitle {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin popup-button {
+  border: none;
+  background-color: transparent;
+  background-size: 289px 89px;
+  background-position: center;
+  width: 289px;
+  height: 89px;
+  cursor: pointer;
+}
+
+@mixin popup-button-hover {
+  background-size: 297px 95px;
+  width: 297px;
+  height: 95px;
+}
+
+@mixin popup-animation-box {
+  height: 275px;
+  width: 100%;
+  position: relative;
+  margin: 6px 0 0;
+  overflow: hidden;
+}

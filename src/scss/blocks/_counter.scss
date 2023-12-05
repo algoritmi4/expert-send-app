@@ -1,0 +1,11 @@
+@import '../mixins';
+
+.counter {
+  background-image: url('../images/counter.svg');
+  margin-left: 10px;
+  @include counter-timer;
+}
+
+.counter__count {
+  @include count-time;
+}

@@ -1,0 +1,42 @@
+@import 'mixins';
+@import 'blocks/person';
+@import 'blocks/car';
+@import 'blocks/timer';
+@import 'blocks/counter';
+@import 'blocks/contents-popup';
+@import 'blocks/instruction-popup';
+@import 'blocks/start-game-popup';
+@import 'blocks/end-game-screen';
+
+.page {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Press Start 2P", "Arial", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+.page__content {
+  max-width: 375px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.game-board {
+  @include bg-def-options('../images/BG.jpg', 375px, 667px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-none {
+  display: none;
+}

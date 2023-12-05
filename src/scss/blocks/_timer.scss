@@ -1,0 +1,16 @@
+@import '../mixins';
+
+.timer {
+  background-image: url('../images/timer.svg');
+  margin-right: 10px;
+  @include counter-timer;
+
+  &.error {
+    background-image: url('../images/timer-error.svg');
+    color: red;
+  }
+}
+
+.timer__time {
+  @include count-time;
+}

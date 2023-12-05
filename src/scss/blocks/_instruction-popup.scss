@@ -1,0 +1,62 @@
+@import 'keyframes.css';
+@import '../mixins';
+
+.instr-popup {
+  @include popup;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+.instr-popup__animation-box {
+  @include popup-animation-box;
+}
+
+.instr-popup__bubble {
+  @include bg-def-options('../images/bubbles/send-bubble.png', 147px, 147px);
+  position: absolute;
+  left: 66px;
+  top: 11px;
+  visibility: hidden;
+  animation: send-bubble-prevue 1.5s linear infinite;
+}
+
+.instr-popup__person {
+  background-image: url('../images/people/left6.svg');
+  background-size: 59px 94px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 147px;
+  height: 147px;
+  z-index: -1;
+  position: absolute;
+  left: 66px;
+  top: 11px;
+  visibility: visible;
+  animation: send-person-prevue 1.5s linear infinite;
+}
+
+.instr-popup__hand {
+  @include bg-def-options('../images/hands/hand.png', 91px, 150px);
+  position: absolute;
+  bottom: 0;
+  left: 102px;
+  animation: hand-click-prevue 1.5s linear infinite;
+}
+
+.instr-popup__subtitle {
+  @include all-popups-text;
+  @include popup-subtitle;
+  margin: 54px 0 0;
+}
+
+.instr-popup_button {
+  @include popup-button;
+  background-image: url('../images/buttons/understand-button-default.png');
+  margin: 28px 0 0;
+
+  &:hover {
+    @include popup-button-hover;
+    background-image: url('../images/buttons/go-button-hover.png');
+    margin: 24px 0 0;
+  }
+}
