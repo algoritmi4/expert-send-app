@@ -1,6 +1,5 @@
 import Person from "../Person/Person";
-import { useState } from "react";
-import useDidMountEffect from "../../customHooks/useDidMountEffect";
+import { useEffect, useState } from "react";
 import Car from "../Car/Car";
 import Timer from "../Timer/Timer";
 import Counter from "../Counter/Counter";
@@ -16,15 +15,16 @@ function MainPage({ isGameStarted, isGameEnded, handleEndGame }) {
   const { isZero } = useSelector(state => state.timer);
   const { isTen } = useSelector(state => state.counter);
 
-  useDidMountEffect(() => {
+  useEffect(() => {
     if (isTen || isZero) {
       handleEndGame();
       clearInterval(timeInterval);
       setPeople([]);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isTen, isZero]);
 
-  useDidMountEffect(() => {
+  useEffect(() => {
     if (isGameStarted) {
       setTimeInterval(setInterval(() => {
         console.log('Привет')
@@ -39,6 +39,7 @@ function MainPage({ isGameStarted, isGameEnded, handleEndGame }) {
   
       handleAddPerson({ right: false, upper: true, timeOut: 6000 });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isGameStarted])
 
   function handleAddPerson({ right, upper, timeOut }) {

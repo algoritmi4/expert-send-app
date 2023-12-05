@@ -1,5 +1,4 @@
-import { useState } from "react";
-import useDidMountEffect from "../../customHooks/useDidMountEffect";
+import { useEffect, useState } from "react";
 import { useActions } from "../../store/Hooks/useActions";
 
 function Person({ info, handleAddPerson, setTimerError }) {
@@ -10,7 +9,7 @@ function Person({ info, handleAddPerson, setTimerError }) {
   const [personExitTimeOut, setPersonExitTimeOut] = useState(null);
   const { countIncreased, timeSetted } = useActions();
 
-  useDidMountEffect(() => {
+  useEffect(() => {
     if (!info.expert) {
       setPersonExitTimeOut(setTimeout(() => {
         setExit(true);
