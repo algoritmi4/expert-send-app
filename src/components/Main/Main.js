@@ -51,16 +51,14 @@ function MainPage({ isGameStarted, isGameEnded, handleEndGame }) {
   }
 
   return (
-    <main className="main">
-      <section className="game-board">
-        <Counter isGameStarted={ isGameStarted } />
-        <Timer timerError={ timerError } isGameStarted={ isGameStarted } />
-        {
-          people.map((person, index) => <Person info={ person } key={ index } handleAddPerson={ handleAddPerson } setTimerError={ setTimerError } />)
-        }
-        <Car isGameStarted={ isGameStarted } />
-      </section>
-    </main>
+    <section className="game-board">
+      <Counter isGameStarted={ isGameStarted } />
+      <Timer timerError={ timerError } isGameStarted={ isGameStarted } />
+      {
+        people.map((person, index) => <Person info={ person } key={ index } handleAddPerson={ handleAddPerson } setTimerError={ setTimerError } />)
+      }
+      <Car isGameStarted={ isGameStarted } />
+    </section>
   )
 }
 
