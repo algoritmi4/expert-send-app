@@ -25,3 +25,8 @@ https://reliable-souffle-1a3106.netlify.app
 3) В git перейти в появившуюся папку и ввести команду npm ci(должен быть установлен node.js(https://nodejs.org/en/download)).
 4) После установки пакетов ввести команду npm start.
 5) Запустить в браузере адрес localhost:3000. Готово, можно тестировать!
+
+## Доменстрация работы проекта
+![image](https://github.com/algoritmi4/experts-send-app/assets/117747237/69e8543b-c4b8-4c08-9e15-da74651c87c0)
+![image](https://github.com/algoritmi4/experts-send-app/assets/117747237/6f5c1e0e-58db-442f-9697-6f9ddbfdb711)
+![image](https://github.com/algoritmi4/experts-send-app/assets/117747237/f8006360-4561-4ff1-baf9-110e9064aba3)
